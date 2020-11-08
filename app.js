@@ -7,6 +7,9 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+const oddNumbers = randomNumbers.filter(item => item % 2 !== 0)
+
+console.log(oddNumbers)
 /*
   02
 
@@ -15,6 +18,15 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
+const numbersLessThan501 = crazyNumbers.reduce((accumulator, crazyNumber)=>{
+if(crazyNumber < 501){
+  accumulator += 1;
+}
+return accumulator
+
+},0 )
+
+console.log(numbersLessThan501)
 /*
   03
 
@@ -23,6 +35,10 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+
+const numbersPotentiation = numbers.map(item => item * item)
+
+console.log(numbersPotentiation)
 
 /*
   04
@@ -45,6 +61,10 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+const tarantinoMoviesBefore2000 = tarantinoMovies.filter(
+  tarantinoMovie => tarantinoMovie.release < 2000)
+
+  console.log(tarantinoMoviesBefore2000)
 /*
   05
 
@@ -62,7 +82,8 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
-/*
+const tvShowsNames = tvShows.map(tvShow => tvShow.name)
+console.log(tvShowsNames)/*
   06
 
   - Exiba no console uma lista dos nomes dos jogos do array abaixo;
@@ -86,3 +107,8 @@ const cart = [
   - Nome 2
   - Nome 3
 */
+const cartName = cart.reduce((accumulator,game)=>{
+    return `${accumulator}- ${game.name}\n`
+},'')
+
+console.log(cartName)
